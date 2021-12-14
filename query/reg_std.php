@@ -33,8 +33,8 @@ require_once('connection.php');
             
             $user_id = $row_user_id["user_id"];
 
-            $query2 = "INSERT INTO std_detail (user_id, skill_id, faculty_id, department_id, sex, age, std_id) 
-                        VALUES ('$user_id', '$skill_id', '$faculty_id', '$department_id', '$sex', '$age', '$std_id')";
+            $query2 = "INSERT INTO std_detail (user_id, skill_id, faculty_id, sex, age, std_id) 
+                        VALUES ('$user_id', '$skill_id', '$faculty_id', '$sex', '$age', '$std_id')";
 
             $result22 = mysqli_query($conn, $query2);
 

@@ -12,16 +12,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login ParttimeRMUTT</title>
 
-    <link href="signin.css" rel="stylesheet">
-    <link href="style.css", rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="style.css", rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit">
-    <style>
-    body {
-    font-family: Kanit;
-    }
-    </style>
-    <!--style="background-color: #73ACD6-->
+
 </head>
 <body class="text-center" style="background-color: #73ACD6">
     
@@ -31,7 +25,7 @@
         <h1 >ระบบจัดหางานนอกเวลาสำหรับนักศึกษา </h1>
         <h2 >มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี </h2>
         <br>
-    <form action="login.php" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="btn form-signin" style="background-color: #B8D1E4">
+    <form action="login.php" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" width = "60px" class=" btn "  style="background-color: #B8D1E4">
                 
         <h1 class="h6 mt-1 mb-3 fw-normal">กรุณากรอกข้อมูลเข้าสู่ระบบ</h1>
        
