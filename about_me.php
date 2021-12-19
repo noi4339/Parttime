@@ -17,12 +17,8 @@
     <title>Admin Page</title>
 <!-- MDB -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="css/admin_page.css">
+  <link rel="stylesheet" href="css/dmin_page.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400&display=swap" rel="stylesheet">
-  <link
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-  rel="stylesheet"
-/>
 
 
 </head>
@@ -47,7 +43,7 @@
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
-      <a class="navbar-brand ms-5 mt-2 mt-lg-0" href="admin_page.php">
+      <a class="navbar-brand ms-4 mt-2 mt-lg-0" href="admin_page.php">
         <img
           src="img/rmutt-logo.png"
           height="80"
@@ -62,7 +58,7 @@
       <!-- Left links -->
       <ul class="navbar-nav   me-auto ms-5 mb-5 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link " href="#">หน้าหลัก</a>
+          <a class="nav-link " href="admin_page.php">หน้าหลัก</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">หางาน</a>
@@ -80,10 +76,14 @@
 
     <!-- Right elements -->
     <div class="d-flex align-items-center">
+      <!-- Icon -->
+      <a class="text-reset me-3" href="#">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
 
       <!-- Avatar -->
       <a
-        class="dropdown-toggle me-5 d-flex align-items-center hidden-arrow"
+        class="dropdown-toggle me-4 d-flex align-items-center hidden-arrow"
         href="#"
         id="navbarDropdownMenuLink"
         role="button"
@@ -113,62 +113,7 @@
   <!-- Container wrapper -->
 </nav>
 <!-- Navbar -->
-
-<div class="container-fluid">
-  <div class="row m-4">
-    <div class="col-md-8">
-      <button type="button" class="btn btn-primary btn-rounded me-2">กิจกรรม</button>
-      <button type="button" class="btn btn-primary btn-rounded">สถิติ</button>
-    </div>
-    <div class="col-md-4 d-grid gap-2 d-md-flex justify-content-md-end">
-      <button type="button" class="btn btn-success btn-rounded">เพิ่มงาน</button>
-    </div>
-</div>
-<div class="container-fluid">
-<h4 class="ms-4">งานทั้งหมด</h4>
-<table class=" table align-middle table-hover  table-bordered table-sm table-light">
-  <thead class="table-dark text-center">
-    <tr>
-      <th scope="col">ลำดับ</th>
-      <th scope="col">งาน</th>
-      <th scope="col">วันที่</th>
-      <th scope="col">สถานะ</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row" class="col-md-1" >1</th>
-      <td>Sit</td>
-      <td>Amet</td>
-      <td>
-        <button type="button" class="btn btn-danger btn-sm px-3">
-          <i class="fas fa-times"></i>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" >2</th>
-      <td>Adipisicing</td>
-      <td>Elit</td>
-      <td>
-        <button type="button" class="btn btn-danger btn-sm px-3">
-          <i class="fas fa-times"></i>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row col-3">3</th>
-      <td>Hic</td>
-      <td>Fugiat</td>
-      <td>
-        <button type="button" class="btn btn-danger btn-sm px-3">
-          <i class="fas fa-times"></i>
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<h4>เกี่ยวกับเรา</h4>
 
 
       <!-- MDB -->
@@ -177,9 +122,7 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"
 ></script>
 
-
 </body>
-
 </html>
 
 

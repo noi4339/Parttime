@@ -1,9 +1,9 @@
 <?php
         session_start();
 require_once('connection.php');
-
         $email = $_POST['email'];
         $password = $_POST['password'];
+        $c_password = $_POST['c_password'];
         $f_name = $_POST['f_name'];
         $l_name = $_POST['l_name'];
         $tel = $_POST['tel'];
@@ -19,10 +19,13 @@ require_once('connection.php');
         $user = mysqli_fetch_assoc($result);
 
         if ($user['email'] == $email) {
-            echo "<script>alert('Username already exists');</script>";
+          $_SESSION['error'] = 'Email ถูกใช้งานแล้ว';
+          header("location: ../reg_std.php");
+        } else if ($password != $c_password) {
+          $_SESSION['error'] = 'รหัสผ่านไม่ตรงกัน';
+          header("location: ../reg_std.php");
         } else {
             $passwordenc = md5($password);
-
             $query1 = "INSERT INTO user (email, password, f_name, l_name, tel, role)
                         VALUES ('$email', '$passwordenc', '$f_name', '$l_name', '$tel', 's')";
             if(mysqli_query($conn, $query1)){
@@ -32,13 +35,12 @@ require_once('connection.php');
             $row_user_id = mysqli_fetch_assoc($result_user_id);
             
             $user_id = $row_user_id["user_id"];
+            $query2 = "INSERT INTO std_detail (user_id, skill_id, faculty_id, department_id, sex, age, std_id) 
+                         VALUES ('$user_id', '$skill_id', '$faculty_id', '$department_id', '$sex', '$age', '$std_id')";
 
-            $query2 = "INSERT INTO std_detail (user_id, skill_id, faculty_id, sex, age, std_id) 
-                        VALUES ('$user_id', '$skill_id', '$faculty_id', '$sex', '$age', '$std_id')";
+             $result2 = mysqli_query($conn, $query2);
 
-            $result22 = mysqli_query($conn, $query2);
-
-            if ($result22){
+            if ($result2){
               $_SESSION['success'] = "Successfully";
               header("Location: ../index.php");
             } else {

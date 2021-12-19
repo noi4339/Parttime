@@ -1,18 +1,16 @@
-html,
-
 body {
-
-  height: 100%;
-  font-family: Kanit;
-  
+  font-family: 'Noto Sans Thai', sans-serif;
+  background-color: aliceblue;
+  margin: 0;
+  padding: 0;
 }
 
-body {
-  display: flex;
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #c7c7c7;
+.form {
+  background-color: aliceblue;
+}
+
+.container {
+  max-width: 600px;
 }
 
 .success {
