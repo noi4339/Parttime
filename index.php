@@ -63,7 +63,7 @@
         <br>
         <button type="button" class="mb-1 btn " style="background-color: #E59595" onclick="document.location='reg_org.php'" >สมัครสมาชิกสำหรับสถานประกอบการ</button>
         <br>
-        <button type="button" class="btn " style="background-color: #E59595" onclick="document.location='reg_admin.php'" >สมัครสมาชิกสำหรับผู้ดูแลระบบ</button>
+        <button type="button" class="btn " style="background-color: #f0f0f0" onclick="document.location='reg_admin.php'" >สมัครสมาชิกสำหรับผู้ดูแลระบบ</button>
         <br>
 
         <p class="mt-5 mb-1 text-muted">© 2021 ParttimeRMUTT</p>

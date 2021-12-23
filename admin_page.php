@@ -121,7 +121,7 @@
       <button type="button" class="btn btn-primary btn-rounded">สถิติ</button>
     </div>
     <div class="col-md-4 d-grid gap-2 d-md-flex justify-content-md-end">
-      <button type="button" class="btn btn-success btn-rounded">เพิ่มงาน</button>
+      <button type="button" class="btn btn-success btn-rounded" onclick="document.location='admin_add_job.php'">เพิ่มงาน</button>
     </div>
 </div>
 <div class="container-fluid">
