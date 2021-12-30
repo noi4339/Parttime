@@ -21,8 +21,8 @@ require_once('connection.php');
         } else {
             $passwordenc = md5($password);
             $query1 = "INSERT INTO user (email, password, f_name, l_name, tel, role)
-                        VALUES ('$email', '$passwordenc', '$f_name', '$l_name', '$tel', 'a')";
-            mysqli_query($conn, $query1)
+                        VALUES ('$email', '$passwordenc', '$f_name', '$l_name', '$tel', 'admin')";
+            mysqli_query($conn, $query1);
 
             if ($query1){
               $_SESSION['success'] = "Successfully";
@@ -32,5 +32,5 @@ require_once('connection.php');
               header("Location: ../index.php");
             }
           }
-        }
+        
 ?>

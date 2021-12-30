@@ -14,7 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin Page</title>
+    <title>About me</title>
 <!-- MDB -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="css/dmin_page.css">
@@ -43,7 +43,7 @@
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
-      <a class="navbar-brand ms-4 mt-2 mt-lg-0" href="admin_page.php">
+      <a class="navbar-brand ms-4 mt-2 mt-lg-0" href="#">
         <img
           src="img/rmutt-logo.png"
           height="80"
@@ -51,8 +51,8 @@
           loading="lazy"
         />
       </a>
-      <a class= "ms-4" href="#">
-        <h4>ระบบจัดหางานนอกเวลาสำหรับนักศึกษา</h4>
+      <a class= "ms-4" href="home_page.php">
+        <h4 >ระบบจัดหางานนอกเวลาสำหรับนักศึกษา</h4>
         <h4>มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี</h4>
         </a>
       <!-- Left links -->

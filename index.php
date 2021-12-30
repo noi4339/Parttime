@@ -27,7 +27,7 @@
         <br>
     <form action="query/login.php" " method="post" width = "60px" class=" btn "  style="background-color: #B8D1E4">
 
-        <h1 class="h6 mt-1 mb-3">กรุณากรอกข้อมูลเข้าสู่ระบบ</h1>
+        <h1 class="h5 mt-1 mb-3">กรุณากรอกข้อมูลเข้าสู่ระบบ</h1>
        
         <?php if (isset($_SESSION['success'])) : ?>
         <div class="w-100 success">
@@ -81,7 +81,8 @@
 <?php 
 
     if (isset($_SESSION['success']) || isset($_SESSION['error'])) {
-        session_destroy();
+      unset($_SESSION['error']);
+      unset($_SESSION['success']);
     }
 
 ?>

@@ -51,7 +51,11 @@
           <div class="row g-3">
             <div class="col-12 ">
               <label for="email" class="form-label" >Email</label>
-              <input type="email" class="form-control" name="email" placeholder="student@mail.rmutt.ac.th" required>          
+              <input type="email" class="form-control" name="email" 
+              pattern="^([\w]*[\w\.]*(?!\.)@mail.rmutt.ac.th)" 
+                      oninvalid="this.setCustomValidity('กรุณากรอก Email นักศึกษา')"
+                      oninput="this.setCustomValidity('')"
+                      placeholder="studentid@mail.rmutt.ac.th">          
             </div>
             <div class="col-sm-6">
               <label for="password" class="form-label" >Password</label>
@@ -59,8 +63,8 @@
             </div>
 
             <div class="col-sm-6">
-              <label for="con_password" class="form-label" >Confirm Password</label>
-              <input type="password" class="form-control" name="con_password" required>
+              <label for="c_password" class="form-label" >Confirm Password</label>
+              <input type="password" class="form-control" name="c_password" required>
             </div>
 
             <div class="col-sm-6">
@@ -161,3 +165,15 @@
     
 </body>
 </html>
+
+<?php 
+              
+    if (isset($_SESSION['success']) || isset($_SESSION['error'])) {
+      unset($_SESSION['error']);
+      unset($_SESSION['success']);
+    }
+
+?>
+                      <!-- pattern="^([\w]*[\w\.]*(?!\.)@mail.rmutt.ac.th)" 
+                      oninvalid="this.setCustomValidity('กรุณากรอก Email นักศึกษา')"
+                      oninput="this.setCustomValidity('')" -->

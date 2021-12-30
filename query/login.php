@@ -2,6 +2,8 @@
 
     session_start();
 
+  
+
     if (isset($_POST['email'])) {
 
         include('connection.php');
@@ -10,7 +12,6 @@
         $password = $_POST['password'];
         $passwordenc = md5($password);
         
-        echo $email;
         $query = "SELECT * FROM user WHERE email = '$email' AND password = '$passwordenc'";
          $result = mysqli_query($conn, $query);
 
@@ -21,17 +22,25 @@
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['user'] = $row['f_name'] . " " . $row['l_name'];
             $_SESSION['role'] = $row['role'];
+            
 
-            if ($_SESSION['role'] == 's') {
+            if ($row['email_verified_at'] == null ) {
+                $_SESSION['error'] = "Please verify your email <a href='email_verification.php? email=" . $email . "'>from here</a>";
+               header("Location: ../index.php");
+               exit();
+              // die(" <br>Please verify your email <a href='../email_verification.php? email=" . $email . "'>from here</a>");
+            }              
+            if ($_SESSION['role'] == 'std') {
                 header("Location: ../home_page.php");
+          
             }
-
-            if ($_SESSION['role'] == 'o') {
+            if ($_SESSION['role'] == 'org') {
                 header("Location: ../org_page.php");
             }
-            if ($_SESSION['role'] == 'a') {
+            if ($_SESSION['role'] == 'admin') {
               header("Location: ../admin_page.php");
           }
+      
         } else {
             $_SESSION['error'] = "Email หรือ Password ไม่ถูกต้อง";
             header("Location: ../index.php");
