@@ -16,3 +16,14 @@ body {
 .btn {
   font-size: 14px;
 }
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  background-color: #2f3e46;
+  padding: 10px;
+}
+.one {
+  grid-column: 3;
+  grid-row: 3;
+}

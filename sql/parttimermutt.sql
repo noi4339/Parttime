@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2021 at 08:57 PM
+-- Generation Time: Jan 04, 2022 at 03:42 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -143,6 +143,31 @@ INSERT INTO `faculty` (`faculty_id`, `faculty_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `org_detail`
+--
+
+CREATE TABLE `org_detail` (
+  `org_detail_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `org_name` varchar(100) NOT NULL,
+  `add_org` text NOT NULL,
+  `PP20` text NOT NULL,
+  `affidavit` text NOT NULL,
+  `idcard_org` text NOT NULL,
+  `lat` varchar(100) NOT NULL,
+  `lng` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `org_detail`
+--
+
+INSERT INTO `org_detail` (`org_detail_id`, `user_id`, `org_name`, `add_org`, `PP20`, `affidavit`, `idcard_org`, `lat`, `lng`) VALUES
+(3, 56, 'sawaddee', 'm.1', 'PPJ-ParttimeRmutt.pptx', 'แผนการดำเนินงานparttime.pdf', 'ตอบคำถาม.txt', '13.72692023178957', '100.53144693374634');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `skill`
 --
 
@@ -181,7 +206,7 @@ CREATE TABLE `std_detail` (
 --
 
 INSERT INTO `std_detail` (`std_detail_id`, `user_id`, `skill_id`, `faculty_id`, `department_id`, `sex`, `age`, `std_id`) VALUES
-(2, 23, 1, 1, 8, 'ชาย', 23, '116130462011-4');
+(23, 51, 1, 1, 8, 'ชาย', 23, '21');
 
 -- --------------------------------------------------------
 
@@ -196,16 +221,19 @@ CREATE TABLE `user` (
   `f_name` varchar(100) NOT NULL,
   `l_name` varchar(100) NOT NULL,
   `tel` varchar(11) NOT NULL,
-  `role` varchar(3) NOT NULL
+  `role` varchar(5) NOT NULL,
+  `verification_code` text NOT NULL,
+  `email_verified_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `email`, `password`, `f_name`, `l_name`, `tel`, `role`) VALUES
-(23, 'noi4339@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'theerapat', 'janwana', '081-2345678', 's'),
-(31, 'admin@admin.com', '81dc9bdb52d04dc20036dbd8313ed055', 'theerapat', 'janwana', '081-2345678', 'a');
+INSERT INTO `user` (`user_id`, `email`, `password`, `f_name`, `l_name`, `tel`, `role`, `verification_code`, `email_verified_at`) VALUES
+(31, 'admin@admin.com', '81dc9bdb52d04dc20036dbd8313ed055', 'theerapat', 'janwana', '081-2345678', 'admin', '', '2021-12-30 07:01:18'),
+(51, '1161304620114@mail.rmutt.ac.th', '81dc9bdb52d04dc20036dbd8313ed055', 'ธีรภัทร์', 'จันวนา', '082-2212334', 'std', '111111', '2022-01-04 21:29:06'),
+(56, 'noi4339@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'theerapat', 'janwana', '081-2345678', 'org', '147619', '2022-01-01 05:19:49');
 
 --
 -- Indexes for dumped tables
@@ -224,6 +252,13 @@ ALTER TABLE `faculty`
   ADD PRIMARY KEY (`faculty_id`);
 
 --
+-- Indexes for table `org_detail`
+--
+ALTER TABLE `org_detail`
+  ADD PRIMARY KEY (`org_detail_id`),
+  ADD KEY `user_id_org` (`user_id`);
+
+--
 -- Indexes for table `skill`
 --
 ALTER TABLE `skill`
@@ -237,7 +272,7 @@ ALTER TABLE `std_detail`
   ADD KEY `faculty_id` (`faculty_id`),
   ADD KEY `department_id` (`department_id`),
   ADD KEY `skill_id` (`skill_id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `user_id_std` (`user_id`);
 
 --
 -- Indexes for table `user`
@@ -262,6 +297,12 @@ ALTER TABLE `faculty`
   MODIFY `faculty_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
+-- AUTO_INCREMENT for table `org_detail`
+--
+ALTER TABLE `org_detail`
+  MODIFY `org_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `skill`
 --
 ALTER TABLE `skill`
@@ -271,17 +312,23 @@ ALTER TABLE `skill`
 -- AUTO_INCREMENT for table `std_detail`
 --
 ALTER TABLE `std_detail`
-  MODIFY `std_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `std_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `org_detail`
+--
+ALTER TABLE `org_detail`
+  ADD CONSTRAINT `user_id_org` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 
 --
 -- Constraints for table `std_detail`
@@ -290,7 +337,7 @@ ALTER TABLE `std_detail`
   ADD CONSTRAINT `department_id` FOREIGN KEY (`department_id`) REFERENCES `department` (`department_id`),
   ADD CONSTRAINT `faculty_id` FOREIGN KEY (`faculty_id`) REFERENCES `faculty` (`faculty_id`),
   ADD CONSTRAINT `skill_id` FOREIGN KEY (`skill_id`) REFERENCES `skill` (`skill_id`),
-  ADD CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+  ADD CONSTRAINT `user_id_std` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

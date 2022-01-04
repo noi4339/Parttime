@@ -80,18 +80,7 @@
 
     <!-- Right elements -->
     <div class="d-flex align-items-center">
-    <!-- Notifications -->
-    <a
-        class="text-reset me-4  hidden-arrow"
-        href="admin_org_list.php"
-        id="admin_org_list"
-        type="button"
-      >
-        <i class="fas fa-envelope fa-lg"></i>
-        <span class="badge rounded-pill badge-notification bg-danger">1</span>
-      </a>
 
-      <div class="d-flex align-items-center">
 
       <!-- Avatar -->
       <a
@@ -123,70 +112,50 @@
 </nav>
 <!-- Navbar -->
 
-<div class="row p-4">
-<div class="col-md-3">
-  <div class="btn-group" role="group" aria-label="Basic example">
-
-      <button type="button" class="btn btn-primary">กิจกรรม</button>
-      <button type="button" class="btn btn-primary">สถิติ</button>
-      <button type="button" class="btn btn-primary">ORG.</button>
-    </div>
-  </div>
-  
-  <div class="col-md-6"></div>
-
-    <div class="col-md-3">
-      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <button type="button" class="md-6 btn btn-success" onclick="document.location='admin_add_job.php'">เพิ่มงาน</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="container-fluid">
-<h4 class="ms-4">งานทั้งหมด</h4>
-<table class=" table align-middle table-hover  table-bordered table-sm table-light">
+<h4 class="mt-4 ms-4">อีเมล สถานประกอบการ.</h4>
+
+<table class = "table align-middle table-hover  table-bordered table-sm table-light mt-3">
   <thead class="table-dark text-center">
     <tr>
-      <th scope="col">ลำดับ</th>
-      <th scope="col">งาน</th>
-      <th scope="col">วันที่</th>
+      <th scope="col">วันเวลา</th>
+      <th scope="col">Email</th>
+      <th scope="col">ชื่อ</th>
+      <th scope="col">ภ.พ. 20</th>
+      <th scope="col">หนังสือหรับรองการจัดตั้ง</th>
+      <th scope="col">สำเนาบัตรประชาชนเจ้าของสถานประกอบการ</th>
       <th scope="col">สถานะ</th>
     </tr>
   </thead>
   <tbody>
+    <?php 
+    include('query/connection.php');
+
+    $query = "SELECT user.*, org_detail.*
+    FROM user 
+    INNER JOIN org_detail ON user.user_id = org_detail.user_id" ;
+    $result  = mysqli_query($conn, $query) or die ("Error in sql : $query". mysqli_error($query));
+
+    foreach ($result as $row) { ?>
     <tr>
-      <th scope="row" class="col-md-1" >1</th>
-      <td>Sit</td>
-      <td>Amet</td>
+      <td><?php echo $row['email_verified_at']; ?></td>
+      <td><?php echo $row['email']; ?></td>
+      <td><?php echo $row['org_name']; ?></td>
+      <td><?php echo $row['PP20']; ?></td>
+      <td><?php echo $row['affidavit']; ?></td>
+      <td><?php echo $row['idcard_org']; ?></td>
       <td>
-        <button type="button" class="btn btn-danger btn-sm px-3">
-          <i class="fas fa-times"></i>
+        <button type="button" class="btn btn-success btn-sm px-3">
+          <i class="fas fa-check"></i>
         </button>
       </td>
     </tr>
-    <tr>
-      <th scope="row" >2</th>
-      <td>Adipisicing</td>
-      <td>Elit</td>
-      <td>
-        <button type="button" class="btn btn-danger btn-sm px-3">
-          <i class="fas fa-times"></i>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row col-3">3</th>
-      <td>Hic</td>
-      <td>Fugiat</td>
-      <td>
-        <button type="button" class="btn btn-danger btn-sm px-3">
-          <i class="fas fa-times"></i>
-        </button>
-      </td>
-    </tr>
+    <?php } ?>
   </tbody>
 </table>
+<?php mysqli_close($conn); ?>
+
 </div>
 
 

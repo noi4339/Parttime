@@ -1,8 +1,79 @@
+body {
+  font-family: 'Noto Sans Thai', sans-serif;
+  background-color: aliceblue;
+  margin: 0;
+  padding: 0;
+}
+
+.form {
+  background-color: aliceblue;
+}
+
+.container {
+  max-width: 600px;
+}
+
+.success {
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #3c763d;
+  color: #3c763d;
+  background: #dff0d8;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.error {
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #a94442;
+  color: #a94442;
+  background: #f2dede;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 20px;
+}
 #map {
-   height: 180px;
-  }
+  height: 100%;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+#floating-panel {
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: "Roboto", "sans-serif";
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+#floating-panel {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  margin-left: -180px;
+  width: 350px;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+}
+
+#latlng {
+  width: 225px;
 }
