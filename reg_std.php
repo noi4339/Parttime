@@ -27,9 +27,9 @@
 
 </head>
 <body>
+<h1 class="h3 mt-1 mb-3 mt-4 text-center fw-normal">สมัครสมาชิกสำหรับนักศึกษา</h1>
 <div class="container">
-    <form action="query/reg_std_db.php" method="post" class="form" class="form-control">
-        <h1 class="h3 mt-1 mb-3 text-center fw-normal">สมัครสมาชิกสำหรับนักศึกษา</h1>
+    <form action="query/reg_std_db.php" method="post">
 
         <?php if (isset($_SESSION['success'])) : ?>
         <div class="w-100 success">
@@ -174,10 +174,12 @@
           </div>
         </div>
         <br>
-        <input  type="submit" class=" d-grid gap-2 col-3 mx-auto mb-2 btn btn-primary btn-lg" name="submit" value="Submit">
+        <input  type="submit" class=" d-grid gap-2 col-3 mx-auto mb-2 btn btn-primary " name="submit" value="Submit">
         <a class="d-grid gap-2 col-5 mx-auto btn btn-secondary" href="index.php">Back to Login</a>  
     </form>
+    <p class="mt-5 mb-1 text-muted text-center">© 2021 ParttimeRMUTT</p>
     </div>
+    
 
     
 

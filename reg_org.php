@@ -70,10 +70,9 @@ function initMap() {
 
 </head>
 <body >
+<h1 class="h3 mt-4 mb-3 text-center fw-normal">สมัครสมาชิกสำหรับสถานประกอบการ</h1>
 <div class="container">
-
-<form action="query/reg_org_db.php" method="post" class="form" enctype="multipart/form-data">
-    <h1 class="h3 mt-1 mb-3 text-center fw-normal">สมัครสมาชิกสำหรับสถานประกอบการ</h1>
+  <form action="query/reg_org_db.php" method="post"  enctype="multipart/form-data">
 
     <?php if (isset($_SESSION['success'])) : ?>
     <div class="w-100 success">
@@ -139,7 +138,7 @@ function initMap() {
           <input id="address" type="text" value="พัทลุง">
           <input id="sub" type="button" value="ค้นหา">
         </div>
-        <div id='map' style='width: 600px; height: 300px;'></div>
+        <div id='map' style='width: 400px; height: 300px;'></div>
 
         <h5>หลักฐานยืนยันตัวตนสถานประกอบการ</h5>
         <div class="col-12">
@@ -159,9 +158,10 @@ function initMap() {
       </div>
     </div>
     <br>
-    <input  type="submit" class=" d-grid gap-2 col-3 mx-auto mb-2 btn btn-primary btn-lg" name="submit" value="Submit">
+    <input  type="submit" class=" d-grid gap-2 col-3 mx-auto mb-2 btn btn-primary" name="submit" value="Submit">
     <a class="d-grid gap-2 col-5 mx-auto btn btn-secondary" href="index.php">Back to Login</a>  
 </form>
+<p class="mt-5 mb-1 text-muted text-center">© 2021 ParttimeRMUTT</p>
 </div>
 
 <script

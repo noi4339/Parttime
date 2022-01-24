@@ -1,16 +1,8 @@
 body {
   font-family: 'Noto Sans Thai', sans-serif;
-  background-color: aliceblue;
+  background-color: #73ACD6;
   margin: 0;
   padding: 0;
-}
-
-.form {
-  background-color: aliceblue;
-}
-
-.container {
-  max-width: 600px;
 }
 
 .success {
@@ -35,4 +27,18 @@ body {
   border-radius: 5px;
   text-align: center;
   margin-bottom: 20px;
+}
+
+.container {
+  max-width: 600px;
+  display: grid;
+  align-items: center;
+  padding-top: 40px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  
 }
