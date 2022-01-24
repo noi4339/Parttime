@@ -114,7 +114,7 @@
 
 
 <div class="container-fluid">
-<h4 class="mt-4 ms-4">อีเมล สถานประกอบการ.</h4>
+<h4 class="mt-4 ms-4">อีเมล สถานประกอบการ</h4>
 
 <table class = "table align-middle table-hover  table-bordered table-sm table-light mt-3">
   <thead class="table-dark text-center">
@@ -142,9 +142,15 @@
       <td><?php echo $row['email_verified_at']; ?></td>
       <td><?php echo $row['email']; ?></td>
       <td><?php echo $row['org_name']; ?></td>
-      <td><?php echo $row['PP20']; ?></td>
-      <td><?php echo $row['affidavit']; ?></td>
-      <td><?php echo $row['idcard_org']; ?></td>
+      <td>
+        <a href="download.php?file1=<?php echo $row['PP20'] ?>"><?php echo $row['PP20']; ?></a>
+      </td>
+      <td>
+        <a href="download.php?file2=<?php echo $row['affidavit'] ?>"><?php echo $row['affidavit']; ?></a>
+      </td>
+      <td>
+        <a href="download.php?file3=<?php echo $row['idcard_org'] ?>"><?php echo $row['idcard_org']; ?></a>
+      </td>
       <td>
         <button type="button" class="btn btn-success btn-sm px-3">
           <i class="fas fa-check"></i>

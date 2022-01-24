@@ -72,7 +72,7 @@ function initMap() {
 <body >
 <div class="container">
 
-<form action="query/reg_org_db.php" method="post" class="form" class="form-control">
+<form action="query/reg_org_db.php" method="post" class="form" enctype="multipart/form-data">
     <h1 class="h3 mt-1 mb-3 text-center fw-normal">สมัครสมาชิกสำหรับสถานประกอบการ</h1>
 
     <?php if (isset($_SESSION['success'])) : ?>
@@ -135,7 +135,7 @@ function initMap() {
         <h5>แผนที่</h5>
         <input id="lat" name = "lat" type="text" required>
         <input id="lng" name = "lng" type="text" required>
-        <div id= "floating-panel">
+        <div>
           <input id="address" type="text" value="พัทลุง">
           <input id="sub" type="button" value="ค้นหา">
         </div>
@@ -144,7 +144,7 @@ function initMap() {
         <h5>หลักฐานยืนยันตัวตนสถานประกอบการ</h5>
         <div class="col-12">
           <label for="PP20" class="form-label">ก.พ.20</label>
-          <input type="file" class="form-control" name="PP20" id="PP20" required/>
+          <input type="file" class="form-control" name="PP20" id="PP20"  required/>
         </div>
         <div class="col-12">
           <label for="affidavit" class="form-label">หนังสือหรับรองการจัดตั้ง</label>

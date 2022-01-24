@@ -24,10 +24,11 @@
 <body class="text-center">
 <div class="container">
     <main>
-    <img class="mb-1 mt-4" src="img/rmutt-logo.png"  width="80px">
+    <img class="mb-1 mt-4" src="img/rmutt-logo.png" width="80px">
 
     <h1 > ระบบจัดหางานนอกเวลาสำหรับนักศึกษา </h1>
     <h2 > มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี </h2>
+    <a href="index.php">back</a>
     <br>
 <form action="query/email_verification_db.php" method="POST" width = "60px" class=" btn "  style="background-color: #B8D1E4">
         <?php if (isset($_SESSION['success'])) : ?>

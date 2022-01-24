@@ -55,7 +55,7 @@
           loading="lazy"
         />
       </a>
-      <a class= "ms-4" href="home_page.php">
+      <a class= "ms-4" href="header_std.php">
         <h4>ระบบจัดหางานนอกเวลาสำหรับนักศึกษา</h4>
         <h4>มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี</h4>
         </a>

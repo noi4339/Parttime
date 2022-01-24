@@ -14,7 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin Page</title>
+    <title>Home Page</title>
 <!-- MDB -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="css/admin_page.css">
@@ -47,7 +47,7 @@
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
-      <a class="navbar-brand ms-5 mt-2 mt-lg-0" href="admin_page.php">
+      <a class="navbar-brand ms-5 mt-2 mt-lg-0" href="#">
         <img
           src="img/rmutt-logo.png"
           height="80"
@@ -55,7 +55,7 @@
           loading="lazy"
         />
       </a>
-      <a class= "ms-4" href="#">
+      <a class= "ms-4" href="home_page.php">
         <h4>ระบบจัดหางานนอกเวลาสำหรับนักศึกษา</h4>
         <h4>มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี</h4>
         </a>
@@ -80,22 +80,10 @@
 
     <!-- Right elements -->
     <div class="d-flex align-items-center">
-    <!-- Notifications -->
-    <!-- <a
-        class="text-reset me-4  hidden-arrow"
-        href="admin_org_list.php"
-        id="admin_org_list"
-        type="button"
-      >
-        <i class="fas fa-envelope fa-lg"></i>
-        <span class="badge rounded-pill badge-notification bg-danger">1</span>
-      </a> -->
-
-      <div class="d-flex align-items-center">
 
       <!-- Avatar -->
       <a
-        class="dropdown-toggle me-4 d-flex align-items-center hidden-arrow"
+        class="dropdown-toggle me-5 d-flex align-items-center hidden-arrow"
         href="#"
         id="navbarDropdownMenuLink"
         role="button"
@@ -112,6 +100,9 @@
           <a class="dropdown-item" href="#">My profile</a>
         </li>
         <li>
+          <a class="dropdown-item" href="#">Settings</a>
+        </li>
+        <li>
           <a class="dropdown-item" href="query/logout.php">Logout</a>
         </li>
         </a>
@@ -123,71 +114,6 @@
 </nav>
 <!-- Navbar -->
 
-<div class="row p-4">
-<div class="col-md-3">
-  <div class="btn-group" role="group" aria-label="Basic example">
-
-      <button type="button" class="btn btn-primary">กิจกรรม</button>
-      <button type="button" class="btn btn-primary">สถิติ</button>
-      <button type="button" class="btn btn-primary" onclick="document.location='admin_org_list.php'">Email ORG.</button>
-    </div>
-  </div>
-  
-  <div class="col-md-6"></div>
-
-    <div class="col-md-3">
-      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <button type="button" class="md-6 btn btn-success" onclick="document.location='admin_add_job.php'">เพิ่มงาน</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid">
-<h4 class="ms-4">งานทั้งหมด</h4>
-<table class=" table align-middle table-hover  table-bordered table-sm table-light">
-  <thead class="table-dark text-center">
-    <tr>
-      <th scope="col">ลำดับ</th>
-      <th scope="col">งาน</th>
-      <th scope="col">วันที่</th>
-      <th scope="col">สถานะ</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row" class="col-md-1" >1</th>
-      <td>Sit</td>
-      <td>Amet</td>
-      <td>
-        <button type="button" class="btn btn-danger btn-sm px-3">
-          <i class="fas fa-times"></i>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row" >2</th>
-      <td>Adipisicing</td>
-      <td>Elit</td>
-      <td>
-        <button type="button" class="btn btn-danger btn-sm px-3">
-          <i class="fas fa-times"></i>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row col-3">3</th>
-      <td>Hic</td>
-      <td>Fugiat</td>
-      <td>
-        <button type="button" class="btn btn-danger btn-sm px-3">
-          <i class="fas fa-times"></i>
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
 
 
       <!-- MDB -->

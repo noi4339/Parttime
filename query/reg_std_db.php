@@ -17,6 +17,8 @@
         $sex = $_POST['sex'];
         $age = $_POST['age'];
         $std_id = $_POST['std_id'];
+
+
         
 
         $user_check = "SELECT * FROM user WHERE email = '$email' LIMIT 1";
@@ -82,9 +84,10 @@
               // connect with database
               $conn = mysqli_connect("localhost", "root", "", "parttimermutt");   
               $passwordenc = md5($password);
+              
               // insert in users table
               $sql1 = "INSERT INTO user (email, password, f_name, l_name, tel, role, verification_code, email_verified_at)
-                        VALUES ('$email', '$passwordenc', '$f_name', '$l_name', '$tel', 'std', '$verification_code', 'NULL')";
+                        VALUES ('$email', '$passwordenc', '$f_name', '$l_name', '$tel', 'std', '$verification_code','0000-00-00 00:00:00')";
               if(mysqli_query($conn, $sql1)){
 
                 $query_user_id = "SELECT * FROM user WHERE email = '$email'";

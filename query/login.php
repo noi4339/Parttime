@@ -24,7 +24,7 @@
             $_SESSION['role'] = $row['role'];
             
 
-            if ($row['email_verified_at'] == null ) {
+            if ($row['email_verified_at'] == '0000-00-00 00:00:00' ) {
                 $_SESSION['error'] = "Please verify your email <a href='email_verification.php? email=" . $email . "'>from here</a>";
                header("Location: ../index.php");
                exit();

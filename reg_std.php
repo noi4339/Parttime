@@ -91,7 +91,29 @@
             <div class="col-sm-10">
               <label for="skill_id" class="form-label">ความถนัด</label>
               <select type="text"  name="skill_id" class="form-control" required>
-              <option value="">-กรุณาเลือกความถนัด-</option>
+              <option value="">-กรุณาเลือกความถนัด 1-</option>
+                <?php foreach($result1 as $skill){?>
+              <option value="<?php echo $skill["skill_id"];?>">
+                <?php echo $skill["skill_id"]; ?>
+              </option>
+                <?php } ?>
+              </select>
+            </div>
+
+            <div class="col-sm-10">
+              <select type="text"  name="skill_id" class="form-control" required>
+              <option value="">-กรุณาเลือกความถนัด 2-</option>
+                <?php foreach($result1 as $skill){?>
+              <option value="<?php echo $skill["skill_id"];?>">
+                <?php echo $skill["skill_id"]; ?>
+              </option>
+                <?php } ?>
+              </select>
+            </div>
+
+            <div class="col-sm-10">
+              <select type="text"  name="skill_id" class="form-control" required>
+              <option value="">-กรุณาเลือกความถนัด 3-</option>
                 <?php foreach($result1 as $skill){?>
               <option value="<?php echo $skill["skill_id"];?>">
                 <?php echo $skill["skill_id"]; ?>
